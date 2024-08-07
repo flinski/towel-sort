@@ -1,6 +1,15 @@
+module.exports = function towelSort(matrix) {
+    if (!matrix) return [];
 
-// You should implement your task here.
+    let sortedArray = [];
 
-module.exports = function towelSort (matrix) {
-  return [];
-}
+    matrix.forEach((array, i) => {
+        if (i % 2 === 0) {
+            sortedArray = sortedArray.concat(array);
+        } else {
+            sortedArray = sortedArray.concat(array.reverse());
+        }
+    });
+
+    return sortedArray;
+};
